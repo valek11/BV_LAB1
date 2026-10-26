@@ -1,0 +1,13 @@
+truncate -s 1G ~/BV_LAB1/virtual_disk.img
+
+mkfs.ext4 ~/BV_LAB1/virtual_disk.img
+
+mkdir -p ~/BV_LAB1/disk_mount
+
+sudo mount -o loop ~/BV_LAB1/virtual_disk.img ~/BV_LAB1/disk_mount
+
+sudo chown -R "$USER":"$USER" ~/BV_LAB1/disk_mount
+
+mkdir -p ~/BV_LAB1/disk_mount/logs
+
+mkdir -p ~/BV_LAB1/archive_store
